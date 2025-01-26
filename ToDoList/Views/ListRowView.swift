@@ -18,6 +18,8 @@ struct ListRowView: View {
             Text(item.title)
             Spacer()
         }
+        .background(Image("moon2"))
+        .opacity(0.87)
         .font(.title2)
         .padding(.vertical, 8)
     }

@@ -17,29 +17,30 @@ struct AddView: View {
     @State var showAlert: Bool = false
 
     var body: some View {
-        ScrollView {
-            VStack {
-                TextField("Type something here...", text: $textFieldText)
-                    .padding(.horizontal)
-                    .frame(height: 55)
-                    .background(Color(UIColor.secondarySystemBackground))
-                    .cornerRadius(10)
-                
-                Button(action: saveButtonPressed, label: {
-                    Text("Save".uppercased())
-                        .foregroundColor(.white)
-                        .font(.headline)
+            ScrollView {
+                VStack {
+                    TextField("Type something here...", text: $textFieldText)
+                        .padding(.horizontal)
                         .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.accentColor)
+                        .background(Color(UIColor.secondarySystemBackground))
                         .cornerRadius(10)
-                })
+                    
+                    Button(action: saveButtonPressed, label: {
+                        Text("Save".uppercased())
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
+                    })
+                }
+                .padding(14)
             }
-            .padding(14)
-        }
+            .background(Image("moon2"))
+            .opacity(0.87)
         .navigationTitle("Add an Item ☾")
         .alert(isPresented: $showAlert, content: getAlert)
-            
         
     }
     

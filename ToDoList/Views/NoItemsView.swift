@@ -15,15 +15,17 @@ struct NoItemsView: View {
     var body: some View {
         ScrollView{
             VStack{
-                Text("There is no items! ")
+                Text("There is no items!")
                     .font(.title)
                     .fontWeight(.semibold)
+                    .bold()
                 Text("Are you a productive person ? I think you should click the add button and add a bunch of items to your todo list! ")
                     .padding(.bottom, 20)
+                    .bold()
                 NavigationLink(
                     destination: AddView(),
                     label: {
-                        Text("Add Something ☾ ")
+                        Text("Add Something ☾")
                             .foregroundStyle(.white)
                             .font(.headline)
                             .frame(height: 55)
@@ -40,6 +42,8 @@ struct NoItemsView: View {
                 .scaleEffect(animate ? 1.1 : 1.0)
                 .offset(y: animate ? -7 : 0)
             }
+            .background(Image("moon2"))
+            .opacity(0.86)
             .frame(maxWidth: 400)
             .multilineTextAlignment(.center)
             .padding(40)
@@ -47,7 +51,6 @@ struct NoItemsView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-    
     func addAnimation() {
         guard !animate else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -69,6 +72,8 @@ struct NoItemsView_Previews: PreviewProvider {
         NavigationView{
             NoItemsView()
                 .navigationTitle("To Do List ☾")
+                .foregroundColor(.black)
+                .bold()
         }
     }
 }

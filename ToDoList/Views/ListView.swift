@@ -32,9 +32,12 @@ struct ListView: View {
                 }
                 .listStyle(PlainListStyle())
             }
-            
         }
+        .background(Image("moon2"))
+        .opacity(0.78)
         .navigationTitle("To Do List ☾")
+        .foregroundColor(.black)
+        .bold()
         .navigationBarItems(
             leading: EditButton(),
             trailing:
